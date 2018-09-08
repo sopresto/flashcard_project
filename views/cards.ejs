@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Yourself</title>
+	<style type="text/css">
+    
+    .front{
+        height: 200px;
+        width: 400px;
+        background-color: yellow;
+        border: 6px solid black;
+    }
+
+    .back {
+        height: 200px;
+        width: 400px;
+        background-color: pink;
+        border: 6px solid black;
+    }
+	</style>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <% for (var i=0; i<cards.length; i++) { %>
+        <div class= "front">
+            <p><%= cards[i].question %></p>
+        </div>
+        <div class= "back">
+        <p><%= cards[i].define %></p>
+        </div>
+	<% } %>
+
+<script type="text/javascript">
+
+$('.back').hide();
+
+$('.front').click(function(){
+    $('.back').show();
+    $('.front').hide();
+});
+
+
+
+
+
+
+
+// $('.UpvoteButton').click(function () {
+//     $(this).toggleClass('on');
+//     $('.DownvoteButton').removeClass('on');
+//   });
+
+//   $('.DownvoteButton').click(function () {
+//     $(this).toggleClass('on');
+//     $('.UpvoteButton').removeClass('on');
+//   });
+// 
+
+</script>
+</body>
+</html>
