@@ -40,10 +40,12 @@ app.get('/index', function(req, res){
 	res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
+//gets the new-card html file 
 app.get('/new-card', function(req, res){
 	res.sendFile(path.join(__dirname, "public/new-card.html"));
 });
 
+//gets the cards ejs file and displays all cards from the flashcard_db
 app.get('/cards', function(req, res){
 	connection.query("SELECT * FROM card_values",
 	function(err, response) {
@@ -54,6 +56,7 @@ app.get('/cards', function(req, res){
 );
 });
 
+//this will post info entered in the form after selecting submit
 app.post('/submit', function(req, res){
 	// res.json(req.body);
   
@@ -67,7 +70,7 @@ app.post('/submit', function(req, res){
   });
 
 
-
+//this will get the flashcards page and list all items entered into the flashcard in json
   app.get('/flashcards', function(req, res){
 	connection.query(
 		"SELECT * FROM card_values",
@@ -77,17 +80,4 @@ app.post('/submit', function(req, res){
 	  );
   });
 
-  
-
-// app.get('/flashcards', function(req, res){
-// 	  connection.query('SELECT * FROM card_values', function (error, results, fields) {
-// 	    if (error) throw error;
-// 		res.json(results);
-// 	  });
-
-// 	});
-
-
-
-
-app.listen(3003);
+app.listen(3002);

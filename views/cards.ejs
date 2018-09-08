@@ -33,6 +33,13 @@
         background-color: pink;
         border: 6px solid black;
     }
+
+    #header {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        color: white;
+        font-size: 50px;
+    }
 	</style>
 </head>
 <body>
@@ -61,10 +68,13 @@
     </div>
 </nav>
 
+    <center>
+    <p id="header">Click On the card in order to display the definition</p>
+    </center>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+<!--This will loop through the cards object included within the server.js file -->
     <% for (var i=0; i<cards.length; i++) { %>
         <div class= "front">
             <p><%= cards[i].question %></p>
@@ -73,6 +83,7 @@
         <p><%= cards[i].define %></p>
         </div>
 	<% } %>
+<!--This begins the javascript that will be used on this page to display the question and the answer-->
 
 <script type="text/javascript">
 
